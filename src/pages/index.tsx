@@ -47,7 +47,7 @@ export default function Home({ user, experiences }: HomeProps) {
         {active === 'Home' ? (
             <>
               <ProfileHeader user={user} />
-              <ExperienceTabs  />
+              <ExperienceTabs experiences={experiences} />
             </>
           ) : (
             <div className="grid place-items-center">{active}</div>
