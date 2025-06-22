@@ -35,3 +35,7 @@ export interface User {
     title: string;
     body: string;
   }
+  export interface SidebarProps {
+    active: string;
+    setActive: (value: string) => void;
+  }
