@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const user: User = await userRes.json();
   const posts: Post[] = await postsRes.json();
 
-  const experiences: Experience[] = posts.slice(0, 5).map((post, index) => ({
+  const experiences: Experience[] = posts.map((post, index) => ({
     id: post.id,
     title: post.title,
     organization: user.company?.name || 'Org Name',
@@ -39,8 +39,8 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Home({ user, experiences }: HomeProps) {
     const [active, setActive] = useState<string>('Home');
   return (
-    <div className="flex min-h-screen">
-      <Sidebar active={active} setActive={setActive}/>
+    <div className="flex min-h-screen md:flex-row flex-col">
+      <Sidebar userName={user?.name} active={active} setActive={setActive}/>
       <div className="flex-1">
         <Navbar />
         <div className="p-6">

@@ -1,30 +1,28 @@
 import { Experience } from "@/types";
-import { CalendarDays, ChevronRight, MapPin } from "lucide-react";
-import React from "react";
+import { CalendarDays, ChevronDown, MapPin } from "lucide-react";
+import React, { useState } from "react";
+import ProgramPanel from "./ProgramPanel";
 
-interface Props {
-  exp: Experience;
-  isActive: boolean;
-  onClick: () => void;
-}
-const ExperienceCard = ({ exp, isActive, onClick }: Props) => {
+const MobileExperienceCard = ({ exp }: { exp: Experience }) => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <div
-      className={`flex flex-col p-6 rounded-xl border ${
-        isActive
+      className={`flex flex-col p-4 rounded-xl border ${
+        expanded
           ? "border-[var(--color-primary)] bg-white shadow-md"
           : "border-[var(--color-border-light)] bg-white"
       } cursor-pointer space-y-3`}
-      onClick={onClick}
+      onClick={() => setExpanded((prev) => !prev)}
     >
       <div className="flex justify-between w-full">
         <p className="text-xs text-[var(--color-muted)] font-medium">
           Young Artist Program | Program
         </p>
-        <ChevronRight className="w-4 h-4 justify-self-end text-[var(--color-muted)]" />
+        <ChevronDown className="w-4 h-4 justify-self-end text-[var(--color-muted)]" />
       </div>
       <div className="flex gap-4 items-center">
-        <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)] text-[var(--color-white)] text-sm font-semibold flex items-center justify-center">
+        <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)] text-white text-sm font-semibold flex items-center justify-center">
           {exp.title[0].toUpperCase()}
         </div>
         <div>
@@ -47,8 +45,23 @@ const ExperienceCard = ({ exp, isActive, onClick }: Props) => {
           <span>{exp.date}</span>
         </div>
       </div>
+      {expanded &&(
+       <>
+       <ProgramPanel exp={exp}/>
+       <div className="flex flex-wrap gap-2 mt-3">
+        {exp.tags.map((tag) => (
+          <span
+            key={tag}
+            className="bg-[var(--color-dark-text)] text-[var(--color-background)] text-xs font-medium px-3 py-1 rounded-full"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+       </> 
+      )}
     </div>
   );
 };
 
-export default ExperienceCard;
+export default MobileExperienceCard;
