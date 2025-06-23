@@ -32,26 +32,26 @@ It demonstrates UI accuracy, clean code structure, state management, responsiven
 
 ## Live Link
 
-
+[View Live Demo](https://decapital-dashboard.netlify.app)
 
 ---
 
 ## Folder Overview
-src
-/pages
-  -index.tsx
-  -_app.tsx
-/components
-  - Sidebar.tsx
-  - Navbar.tsx
-  - ProfileHeader.tsx
-  - ExperienceTabs.tsx
-  - ExperienceCard.tsx
-  - ProgramPanel.tsx
-  - MobileExperienceCard.tsx
-/styles
-   - globals.css
-- types.ts
+src/
+├── pages/
+│   ├── index.tsx
+│   └── _app.tsx
+├── components/
+│   ├── Sidebar.tsx
+│   ├── Navbar.tsx
+│   ├── ProfileHeader.tsx
+│   ├── ExperienceTabs.tsx
+│   ├── ExperienceCard.tsx
+│   ├── ProgramPanel.tsx
+│   └── MobileExperienceCard.tsx
+├── styles/
+│   └── globals.css
+├── types.ts
 
 ---
 ## APIs Used
@@ -89,8 +89,8 @@ npm run dev
 1. Push to Github
 2. [Link your repo on Netlify](https://www.netlify.com/)
 3. Set:
-   -Build Command: npm run dev
-   -Publish Directory: out
+   - Build Command: npm run dev
+   - Publish Directory: out
 4. Netlify auto-deploys on push.
 
 ---
@@ -98,12 +98,12 @@ npm run dev
 ## Requirements Covered
 
 1. **React + Next.js (Pages Router)**
-2. getStaticProps usage
-3. Tailwind CSS for layout and theming
+2. **getStaticProps usage**
+3. **Tailwind CSS for layout and theming**
 4. **Real API integration**
 5. **UI accuracy with wireframe reference**
-6. Public GitHub repo
-7. Live deployment on Netlify
+6. **Public GitHub repo**
+7. **Live deployment on Netlify**
 
 ---
 
@@ -111,5 +111,5 @@ npm run dev
 
 Joy Ajiboye
 
-[LinkedIn](nkedin.com/in/joy-ajiboye/)
-[GitHub](https://github.com/CodesManiac/)
+- [LinkedIn](nkedin.com/in/joy-ajiboye/)
+- [GitHub](https://github.com/CodesManiac/)
